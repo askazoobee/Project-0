@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/LightGoldenrodYellow"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_1"
+        android:id="@+id/button"
+        android:background="@color/udacity_orange"
+        android:textColor="@color/white"
+        android:includeFontPadding="true"
+        android:onClick="sendMessage"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_2"
+        android:id="@+id/button2"
+        android:onClick="sendMessage"
+        android:background="@color/udacity_orange"
+        android:textColor="@color/white"
+        android:layout_above="@+id/button3"
+        android:layout_alignStart="@+id/button3"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_3"
+        android:id="@+id/button3"
+        android:background="@color/udacity_orange"
+        android:textColor="@color/white"
+        android:onClick="sendMessage"
+        android:layout_above="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_4"
+        android:id="@+id/button4"
+        android:background="@color/udacity_orange"
+        android:textColor="@color/white"
+        android:onClick="sendMessage"
+        android:layout_above="@+id/button5"
+        android:layout_alignStart="@+id/button3"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_5"
+        android:id="@+id/button5"
+        android:onClick="sendMessage"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/welcome"
+        android:textStyle="bold"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+</RelativeLayout>
