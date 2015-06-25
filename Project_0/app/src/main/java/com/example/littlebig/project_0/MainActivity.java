@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
+    //Declare as class variable
+   private Toast mAppToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,36 +20,39 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
     public void sendMessage(View view) {
+
         //get string from strings.xml
-        String message = getString(R.string.toast_message);
+       // String message = getString(R.string.toast_message);
 
-        Context context = getApplicationContext();
+        String message = "Launching the " + ((Button) view).getText().toString();
+
+
+        //using switch to specify which app is being launched
+     /*   switch (view.getId()){
+            case R.id.button:
+                message = "Opening Spotify Streamer App!";
+            case R.id.button2:
+                message = "Launching Scores App";
+
+        }*/
+
+
+
+        /* old code for toast...
+        //redundant string-to-charsequence
         CharSequence text = message;
+        Context context = getApplicationContext();
+        Toast toast = Toast.makeText(context,message,duration);
+       toast.show();
+        */
         int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+        //Stop any previous toasts/tip from reviewer
+        if(mAppToast !=null){
+            mAppToast.cancel();
+        }
+        //Make and display new toast
+        mAppToast = Toast.makeText(this,message,duration);
+        mAppToast.show();
     }
 }
